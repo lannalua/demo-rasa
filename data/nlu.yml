@@ -1,91 +1,49 @@
 version: "3.1"
-
 nlu:
-- intent: greet
+- intent: saudar
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - oi
+    - olá
+    - bom dia
+    - boa tarde
+    - boa noite
+    - oi, tudo bem?
 
-- intent: goodbye
+- intent: pedir_pizza
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - Eu gostaria de pedir uma pizza
+    - Quero uma pizza, por favor
+    - Pode me ajudar a pedir uma pizza?
+    - Como faço para pedir uma pizza aqui?
+    - Gostaria de fazer uma pedido
 
-- intent: affirm
+- intent: especificar_pizza
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - Quero uma pizza de [calabresa]{sabor}
+    - Uma pizza de [mussarela]{sabor}
+    - Pode ser de [quatro queios]{sabor}
+    - Eu gostaria de uma pizza de [pepporoni]{sabor}
+    - [quatro queios]{sabor}
 
-- intent: deny
+- intent: informar_endereco
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - Endereco de entrega é [Rua das Flores]{endereco}, [123],{numero}
+    - Entregar em [Rua das Flores]{endereco}, [123],{numero}
+    - Meu endereço é [Rua das Flores]{endereco}, [123],{numero}
+    - [Rua das Flores]{endereco}, [123],{numero}, por favor
+    - Fica na [Rua das Flores]{endereco}, [123],{numero}
 
-- intent: mood_great
+- intent: confirmar_pedido
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - Sim, está tudo certo
+    - Isso mesmo, pode fazer
+    - Ok, pode fazer
+    - Confirma o pedido
+    - Tudo certo, pode fazer o pedido
 
-- intent: mood_unhappy
+- intent: cancelar_pedido
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - Quero cancelar o pedido
+    - Cancela, por favor
+    - Não quero mais a pizza
+    - Desisto do pedido
