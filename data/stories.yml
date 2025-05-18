@@ -2,29 +2,35 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: Saudação de usuário e pedido de pizza
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: saudar
+  - action: utter_saudar
+  - intent: pedir_pizza
+  - action: utter_pedir_pizza
+  - intent: especificar_pizza
+  - action: utter_especificar_pizza
+  - intent: informar_endereco
+  - action: utter_informar_endereco
+  - intent: confirmar_pedido
+  - action: utter_confirmar_pedido
 
-- story: sad path 1
+- story: Pedido de pizza com cancelamento
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - intent: saudar
+  - action: utter_saudar
+  - intent: pedir_pizza
+  - action: utter_pedir_pizza
+  - intent: especificar_pizza
+  - action: utter_especificar_pizza
+  - intent: cancelar_pedido
+  - action: utter_cancelar_pedido
 
-- story: sad path 2
+- story: Usuário saúda e cancela o pedido
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - intent: saudar
+  - action: utter_saudar
+  - intent: pedir_pizza
+  - action: utter_pedir_pizza
+  - intent: cancelar_pedido
+  - action: utter_cancelar_pedido
