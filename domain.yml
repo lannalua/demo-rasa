@@ -36,7 +36,7 @@ responses:
   utter_especificar_pizza:
   - text: "Ótimo, uma pizza de {sabor}. Qual o endereço de entrega?"
   utter_informar_endereco:
-  - text: "Perfeito, sua pizza será entregue em {endereco} {numero}. Você gostaria de confirmar o pedido?"
+  - text: "Perfeito, sua pizza será entregue em {endereco} e {numero}. Você gostaria de confirmar o pedido?"
   utter_confirmar_pedido:
   - text: "Pedido confirmado! Sua pizza chegará em breve. Mais algumas coisa?"
   utter_cancelar_pedido:
