@@ -1,0 +1,6 @@
+rasa init
+pip install rasa
+rasa train
+rasa shell
+/stop´
+comando para venv

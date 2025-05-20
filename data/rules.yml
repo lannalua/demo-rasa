@@ -1,36 +1,36 @@
-version: "3.1"
-rules:
+# version: "3.1"
+# rules:
 
-- rule: Saudar o usuário de volta
-  steps:
-  - intent: saudar
-  - action: utter_saudar
+# - rule: Saudar o usuário de volta
+#   steps:
+#   - intent: saudar
+#   - action: utter_saudar
 
-- rule: Responder ao pedido da pizza
-  steps:
-  - intent: pedir_pizza
-  - action: utter_pedir_pizza
+# - rule: Responder ao pedido da pizza
+#   steps:
+#   - intent: pedir_pizza
+#   - action: utter_pedir_pizza
 
-- rule: Confirmar sabor da pizza e pedir o endereço
-  condition:
-  - active_loop: null
-  steps:
-  - intent: especificar_pizza
-  - action: utter_especificar_pizza
+# - rule: Confirmar sabor da pizza e pedir o endereço
+#   condition:
+#   - active_loop: null
+#   steps:
+#   - intent: especificar_pizza
+#   - action: utter_especificar_pizza
 
-- rule: Confirmar endereço e pedir confirmação do endereço
-  condition:
-  - active_loop: null
-  steps:
-  - intent: informar_endereco
-  - action: utter_informar_endereco
+# - rule: Confirmar endereço e pedir confirmação do endereço
+#   condition:
+#   - active_loop: null
+#   steps:
+#   - intent: informar_endereco
+#   - action: utter_informar_endereco
 
-- rule: Confirmar o pedido de pizza
-  steps:
-  - intent: confirmar_pedido
-  - action: utter_confirmar_pedido
+# - rule: Confirmar o pedido de pizza
+#   steps:
+#   - intent: confirmar_pedido
+#   - action: utter_confirmar_pedido
 
-- rule: Cancelar o pedido de pizza
-  steps:
-  - intent: cancelar_pedido
-  - action: utter_cancelar_pedido
+# - rule: Cancelar o pedido de pizza
+#   steps:
+#   - intent: cancelar_pedido
+#   - action: utter_cancelar_pedido

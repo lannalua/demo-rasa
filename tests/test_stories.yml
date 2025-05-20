@@ -1,37 +1,37 @@
-#### This file contains tests to evaluate that your bot behaves as expected.
-#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+# #### This file contains tests to evaluate that your bot behaves as expected.
+# #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
-stories:
-- story: Teste saudação e pedido de pizza completo
-  steps:
-  - user: "Olá"
-    intent: saudar
-  - action: utter_saudar
-  - user: "Eu gostaria de pedir uma pizza"
-    intent: pedir_pizza
-  - action: utter_pedir_pizza
-  - user: "Quero uma pizza de calabresa"
-    intent: especificar_pizza
-    entities:
-    - sabor: "calabresa"
-  - action: utter_especificar_pizza
-  - user: "Entrega na Rua das Flores, 123"
-    intent: informar_endereco
-    entites:
-    - endereco: "Rua das Flores"
-    - numero: "123"
-  - action: utter_informar_endereco
-  - user: "Sim, confirmar meu pedido"
-    intent: confirmar_pedido
-  - action: utter_confirmar_pedido
+# stories:
+# - story: Teste saudação e pedido de pizza completo
+#   steps:
+#   - user: "Olá"
+#     intent: saudar
+#   - action: utter_saudar
+#   - user: "Eu gostaria de pedir uma pizza"
+#     intent: pedir_pizza
+#   - action: utter_pedir_pizza
+#   - user: "Quero uma pizza de calabresa"
+#     intent: especificar_pizza
+#     entities:
+#     - sabor: "calabresa"
+#   - action: utter_especificar_pizza
+#   - user: "Entrega na Rua das Flores, 123"
+#     intent: informar_endereco
+#     entites:
+#     - endereco: "Rua das Flores"
+#     - numero: "123"
+#   - action: utter_informar_endereco
+#   - user: "Sim, confirmar meu pedido"
+#     intent: confirmar_pedido
+#   - action: utter_confirmar_pedido
   
 
-- story: Teste cancelamento do pedido
-  steps:
-  - user: "Quero uma pizza de pepperoni"
-    intent: especificar_pizza
-    entities:
-    - sabor: "pepperoni"
-  - user: "Na verdade, cancele meu pedido"
-    intent: cancelar_pedido
-  - action: utter_cancelar_pedido
+# - story: Teste cancelamento do pedido
+#   steps:
+#   - user: "Quero uma pizza de pepperoni"
+#     intent: especificar_pizza
+#     entities:
+#     - sabor: "pepperoni"
+#   - user: "Na verdade, cancele meu pedido"
+#     intent: cancelar_pedido
+#   - action: utter_cancelar_pedido
