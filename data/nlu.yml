@@ -1,49 +1,105 @@
 version: "3.1"
+
 nlu:
-- intent: saudar
+
+- intent: saudacao
   examples: |
     - oi
     - olá
     - bom dia
     - boa tarde
     - boa noite
-    - oi, tudo bem?
+    - e aí, tudo bem?
+    - tudo certo?
+    - alguém?
 
-- intent: pedir_pizza
+- intent: despedida
   examples: |
-    - Eu gostaria de pedir uma pizza
-    - Quero uma pizza, por favor
-    - Pode me ajudar a pedir uma pizza?
-    - Como faço para pedir uma pizza aqui?
-    - Gostaria de fazer uma pedido
+    - tchau
+    - até mais
+    - até logo
+    - valeu, obrigado
+    - obrigado pela ajuda
+    - falou
+    - obrigada
+    - obrigado
 
-- intent: especificar_pizza
+- intent: marcar_consulta
   examples: |
-    - Quero uma pizza de [calabresa]{sabor}
-    - Uma pizza de [mussarela]{sabor}
-    - Pode ser de [quatro queios]{sabor}
-    - Eu gostaria de uma pizza de [pepporoni]{sabor}
-    - [quatro queios]{sabor}
+    - quero marcar uma consulta
+    - gostaria de agendar um horário
+    - preciso de uma consulta
+    - quero um horário com o dentista
+    - posso agendar uma consulta?
+    - posso agendar um horário?
+    - quero uma consulta
 
-- intent: informar_endereco
+- intent: consultar_horario
   examples: |
-    - Endereco de entrega é [Rua das Flores]{endereco}, [123],{numero}
-    - Entregar em [Rua das Flores]{endereco}, [123],{numero}
-    - Meu endereço é [Rua das Flores]{endereco}, [123],{numero}
-    - [Rua das Flores]{endereco}, [123],{numero}, por favor
-    - Fica na [Rua das Flores]{endereco}, [123],{numero}
+    - quais horários estão disponíveis?
+    - que horas posso marcar?
+    - tem vaga amanhã?
+    - há horários livres na sexta?
+    - posso consultar a agenda?
 
-- intent: confirmar_pedido
+- intent: informar_procedimento
   examples: |
-    - Sim, está tudo certo
-    - Isso mesmo, pode fazer
-    - Ok, pode fazer
-    - Confirma o pedido
-    - Tudo certo, pode fazer o pedido
+    - para limpeza
+    - para canal
+    - para clareamento
+    - é para extração de dente
+    - quero fazer uma obturação
+    - [limpeza](procedimento)
+    - [clareamento](procedimento)
+    - [extração](procedimento)
+    - [canal](procedimento)
 
-- intent: cancelar_pedido
+- intent: informar_data
   examples: |
-    - Quero cancelar o pedido
-    - Cancela, por favor
-    - Não quero mais a pizza
-    - Desisto do pedido
+    - dia [10 de junho](data)
+    - no dia [15](data)
+    - para [amanhã](data)
+    - na próxima [terça-feira](data)
+    - dia [20/06](data)
+    - [hoje](data)
+
+- intent: informar_hora
+  examples: |
+    - às [14h](hora)
+    - por volta das [9 horas](hora)
+    - pode ser às [16:30](hora)
+    - quero às [8 da manhã](hora)
+    - [10h30](hora)
+
+- intent: perguntar_valor
+  examples: |
+    - quanto custa uma limpeza?
+    - qual o valor do clareamento?
+    - quanto é a extração?
+    - qual o preço do canal?
+    - valores dos procedimentos
+    - quanto é?
+
+- intent: afirmar
+  examples: |
+    - sim
+    - claro
+    - com certeza
+    - pode ser
+    - ok
+    - tá bom
+
+- intent: negar
+  examples: |
+    - não
+    - prefiro outro horário
+    - melhor não
+    - quero mudar
+    - não gostei desse
+
+- intent: fora_de_escopo
+  examples: |
+    - me conta uma piada
+    - o que você acha da copa?
+    - qual a capital da Austrália?
+    - você gosta de música?

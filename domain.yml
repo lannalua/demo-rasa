@@ -1,56 +1,99 @@
 version: "3.1"
+
 intents:
-  - saudar
-  - pedir_pizza
-  - especificar_pizza
-  - informar_endereco
-  - confirmar_pedido
-  - cancelar_pedido
+  - saudacao
+  - despedida
+  - marcar_consulta
+  - consultar_horario
+  - informar_procedimento
+  - informar_data
+  - informar_hora
+  - perguntar_valor
+  - negar
+  - afirmar
+  - fora_de_escopo
 
 entities:
-    - sabor
-    - endereco
-    - numero
+  - procedimento
+  - data
+  - hora
+  - nome
 
 slots:
- endereco:
-     type: text
-     mappings:
+  nome:
+    type: text
+    influence_conversation: true
+    mappings:
          - type: from_entity
-           entity: endereco
- sabor:
-     type: text
-     mappings:
+           entity: nome
+  procedimento:
+    type: text
+    influence_conversation: true
+    mappings:
          - type: from_entity
-           entity: sabor
- numero:
-     type: text
-     mappings:
+           entity: procedimento
+  data:
+    type: text
+    influence_conversation: true
+    mappings:
          - type: from_entity
-           entity: numero
-responses:
-  utter_saudar:
-  - text: "OLá! Como posso ajudar você hoje?"
-  utter_pedir_pizza:
-  - text: "Claro! Qual sabor de pizza você gostaria?"
-  utter_especificar_pizza:
-  - text: "Ótimo, uma pizza de {sabor}. Qual o endereço de entrega?"
-  utter_informar_endereco:
-  - text: "Perfeito, sua pizza será entregue em {endereco} e {numero}. Você gostaria de confirmar o pedido?"
-  utter_confirmar_pedido:
-  - text: "Pedido confirmado! Sua pizza chegará em breve. Mais algumas coisa?"
-  utter_cancelar_pedido:
-  - text: "Pedido cancelado. Se precisar de mais alguma coisa, estou à disposição!"
+           entity: data
+  hora:
+    type: text
+    influence_conversation: true
+    mappings:
+         - type: from_entity
+           entity: hora
 
-actions: 
-- utter_saudar
-- utter_pedir_pizza
-- utter_especificar_pizza
-- utter_informar_endereco
-- utter_confirmar_pedido
-- utter_cancelar_pedido
+responses:
+  utter_saudacao:
+    - text: "Olá! Bem-vindo ao consultório odontológico. Como posso te ajudar hoje?"
+
+  utter_despedida:
+    - text: "Até mais! Qualquer coisa, estou por aqui."
+
+  utter_perguntar_nome:
+    - text: "Qual é o seu nome completo, por favor?"
+    - text: "Informe seu nome completo, por favor"
+
+  utter_perguntar_procedimento:
+    - text: "Qual procedimento você gostaria de agendar?"
+
+  utter_perguntar_data:
+    - text: "Para qual dia você gostaria de marcar a consulta?"
+    - text: "Qual a data da consulta você gostaria?"
+
+  utter_perguntar_hora:
+    - text: "E em qual horário?"
+    - text: "Qual o melhor horário para você?"
+
+  utter_confirmar_agendamento:
+    - text: "Consulta marcada com sucesso para {procedimento} no dia {data} às {hora}, em nome de {nome}."
+
+  utter_horario_ocupado:
+    - text: "Infelizmente esse horário já está ocupado. Pode escolher outro?"
+    - text: "Infelizmente esse horário não está disponível. Pode escolher outro?"
+
+  utter_valor_procedimento:
+    - text: "O valor do procedimento {procedimento} é R$ {valor}."
+
+  utter_fora_de_escopo:
+    - text: "Desculpe, não entendi. Poderia reformular sua pergunta?"
+
+actions:
+  - action_marcar_consulta
+  - action_verificar_valor
+  - utter_saudacao
+  - utter_despedida
+  - utter_perguntar_nome
+  - utter_perguntar_procedimento
+  - utter_perguntar_data
+  - utter_perguntar_hora
+  - utter_confirmar_agendamento
+  - utter_horario_ocupado
+  - utter_valor_procedimento
+  - utter_fora_de_escopo
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
